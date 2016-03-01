@@ -49,6 +49,11 @@ describe Build::UpdateBranch do
       include_examples 'updates the branch'
     end
 
+    describe 'for cron events' do
+      let(:event_type) { 'cron' }
+      include_examples 'updates the branch'
+    end
+
     describe 'for pull request events' do
       let(:event_type) { 'pull_request' }
       include_examples 'does not update the branch'
